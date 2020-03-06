@@ -4,7 +4,7 @@
 #
 Name     : Counter
 Version  : 1.0.0
-Release  : 7
+Release  : 8
 URL      : https://files.pythonhosted.org/packages/7d/b0/23d19892f8d91ec9c5b8a2035659bce23587fed419d68fa3d70b6abf8bcd/Counter-1.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7d/b0/23d19892f8d91ec9c5b8a2035659bce23587fed419d68fa3d70b6abf8bcd/Counter-1.0.0.tar.gz
 Summary  : Counter package defines the "counter.Counter" class similar to bags or multisets in other languages.
@@ -16,77 +16,7 @@ Requires: Counter-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-Counter
 ===========
-
-..  image:: https://secure.travis-ci.org/KelSolaar/Counter.png?branch=master
-
-Introduction
-------------
-
-**Counter** package defines the **counter.Counter** class similar to bags or multisets in other languages. This package is created from Raymond Hettinger recipe: http://code.activestate.com/recipes/576611/
-
-Installation
-------------
-
-To install **Foundations** from the `Python Package Index <http://pypi.python.org/pypi/Foundations>`_ you can issue this command in a shell::
-
-	pip install Counter
-
-or this alternative command::
-
-	easy_install Counter
-
-Alternatively, if you want to directly install from `Github <http://github.com/KelSolaar/Counter>`_ source repository::
-
-	git clone git://github.com/KelSolaar/Counter.git
-	python setup.py install
-
-Usage
------
-
-For precise usage examples, please refer to the original recipe: http://code.activestate.com/recipes/576611/ and Python documentation: http://docs.python.org/library/collections.html#collections.Counter
-
--  **Tally occurrences of words in a list**::
-
-
-	>>> cnt = Counter()
-	>>> for word in ['red', 'blue', 'red', 'green', 'blue', 'blue']:
-	...     cnt[word] += 1
-	>>> cnt
-	Counter({'blue': 3, 'red': 2, 'green': 1})
-
--  **Find the ten most common words in Hamlet**::
-
-
-	>>> import re
-	>>> words = re.findall('\w+', open('hamlet.txt').read().lower())
-	>>> Counter(hamlet_words).most_common(10)
-	[('the', 1143), ('and', 966), ('to', 762), ('of', 669), ('i', 631),
-	 ('you', 554),  ('a', 546), ('my', 514), ('hamlet', 471), ('in', 451)]
-
--  **Multiset examples**::
-
-
-	>>> c = Counter(a=3, b=1)
-	>>> d = Counter(a=1, b=2)
-	>>> c + d                           # add two counters together:  c[x] + d[x]
-	Counter({'a': 4, 'b': 3})
-	>>> c - d                           # subtract (keeping only positive counts)
-	Counter({'a': 2})
-	>>> c & d                           # intersection:  min(c[x], d[x])
-	Counter({'a': 1, 'b': 1})
-	>>> c | d                           # union:  max(c[x], d[x])
-	Counter({'a': 3, 'b': 2})
-
-About
------
-
-| **Counter** by Raymond Hettinger – 2009
-| Copyright© 2009 - Raymond Hettinger
-| This software is released under terms of MIT license: http://opensource.org/licenses/mit-license.php
-| `thomas.mansencal@gmail.com <mailto:thomas.mansencal@gmail.com>`_
-| `http://www.thomasmansencal.com/ <http://www.thomasmansencal.com/>`_
 
 %package license
 Summary: license components for the Counter package.
@@ -110,7 +40,7 @@ python components for the Counter package.
 Summary: python3 components for the Counter package.
 Group: Default
 Requires: python3-core
-Provides: pypi(Counter)
+Provides: pypi(counter)
 
 %description python3
 python3 components for the Counter package.
@@ -125,8 +55,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582913671
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583517538
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
